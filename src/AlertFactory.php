@@ -19,6 +19,7 @@ class AlertFactory
     {
         $getRequest = $this->client->get($this::API_END_POINT);
         $response = json_decode($getRequest->getBody());
+
         return $response->value->joke;
     }
 }
