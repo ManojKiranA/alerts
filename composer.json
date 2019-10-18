@@ -1,0 +1,27 @@
+{
+    "name": "manojkiran/alert",
+    "description": "Alerts in Laravel App if there is Error Occured",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "manojkiran",
+            "email": "manojkiran10031998@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "symfony/var-dumper": "^4.3",
+        "phpunit/phpunit": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Manojkiran\\Alert\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Manojkiran\\Alert\\Tests\\": "tests/"
+        }
+    }
+}
