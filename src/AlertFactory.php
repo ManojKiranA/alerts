@@ -13,7 +13,7 @@ class AlertFactory
 
     public function __construct(array $alerts = null)
     {
-        if($alerts):
+        if ($alerts):
                 $this->alerts = $alerts;
         endif;
     }
