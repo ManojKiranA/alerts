@@ -9,7 +9,9 @@
             "email": "manojkiran10031998@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
     "require-dev": {
         "symfony/var-dumper": "^4.3",
         "phpunit/phpunit": "^8.4"

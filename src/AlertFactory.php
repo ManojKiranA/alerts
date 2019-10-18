@@ -2,24 +2,23 @@
 
 namespace Manojkiran\Alert;
 
+use GuzzleHttp\Client;
+
 class AlertFactory
 {
-    public $alerts = [
-        'After taking a steroids test doctors informed Chuck Norris that he had tested positive. He laughed upon receiving this information, and said &quot;of course my urine tested positive, what do you think they make steroids from?',
-        'Bill Gates thinks he\'s Chuck Norris. Chuck Norris actually laughed. Once.',
-        'Chuck Norris can unit test entire applications with a single assert.',
-        'No one has ever pair-programmed with Chuck Norris and lived to tell about it.',
-    ];
+    protected $client;
 
-    public function __construct(array $alerts = null)
+    const API_END_POINT = 'http://api.icndb.com/jokes/random/';
+
+    public function __construct(Client $client = null)
     {
-        if ($alerts):
-                $this->alerts = $alerts;
-        endif;
+        $this->client = $client ?? new Client();
     }
 
     public function sendAlert()
     {
-        return $this->alerts[array_rand($this->alerts)];
+        $getRequest = $this->client->get($this::API_END_POINT);
+        $response = json_decode($getRequest->getBody());
+        return $response->value->joke;
     }
 }
