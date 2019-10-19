@@ -1,2 +1,2 @@
-# alerts
+# Alerts
 Alerts in Laravel App
