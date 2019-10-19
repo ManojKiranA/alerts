@@ -8,6 +8,7 @@ use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Manojkiran\Alert\AlertFactory;
 use GuzzleHttp\Handler\MockHandler;
+
 class AlertFactoryTest extends TestCase
 {
     public function testItGetThePassedAlert()
@@ -29,5 +30,4 @@ class AlertFactoryTest extends TestCase
         $alert = $alertFactory->sendAlert();
         $this->assertSame('Chuck Norris built the hospital he was born in.', $alert);
     }
-
 }
